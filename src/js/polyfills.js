@@ -1,3 +1,5 @@
+require('string.fromcodepoint');
+
 if (typeof Object.assign != 'function') {
   Object.assign = function(target, varArgs) { // .length of function is 2
     'use strict';
