@@ -16,6 +16,7 @@
   "repository": "https://github.com/RobertMenke/rm-emoji-picker",
   "bugs": "https://github.com/RobertMenke/rm-emoji-picker/issues",
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
     "emoji-js": "^3.2.0",
     "rm-tooltip": "2.0.2"
   },

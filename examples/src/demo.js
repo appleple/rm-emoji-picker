@@ -1,5 +1,5 @@
 import $ from "jquery";
-import EmojiPicker from "./../../dist/EmojiPicker";
+import EmojiPicker from "../../src/js/EmojiPicker";
 
 $(document).ready(() => {
 
@@ -17,7 +17,6 @@ $(document).ready(() => {
         positioning : "vertical"
     });
     picker.listenOn(icon, container, input);
-
     setInterval(() => {
         console.log(picker.getText());
     }, 3000);

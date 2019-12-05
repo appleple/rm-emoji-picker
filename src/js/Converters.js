@@ -10,7 +10,9 @@ class Converters {
      * @returns {Converters}
      */
     static factory() {
-        return new Converters();
+        const converters = new Converters();
+        converters.avoid_ms_emoji = false;
+        return converters;
     }
 
     /**
@@ -40,7 +42,9 @@ class Converters {
             converter.img_sets.google.sheet   = sheets.google;
             converter.img_sets.twitter.sheet  = sheets.twitter;
             converter.img_sets.emojione.sheet = sheets.emojione;
-            converter.use_sheet               = true;
+            converter.use_sheet               = false;
+            converter.avoid_ms_emoji = false;
+            converter.unified = 'unified';
         });
     }
 
@@ -88,6 +92,7 @@ class Converters {
      */
     static get unified(){
         const converter = new EmojiConvertor();
+        converter.avoid_ms_emoji = false;
         converter.init_unified();
         return converter;
     }
@@ -99,11 +104,11 @@ class Converters {
      */
     static get environment(){
         const converter = new EmojiConvertor();
+        converter.avoid_ms_emoji = false;
         converter.init_env();
-        //We don't want to use images for now - may revisit this in the future.
-        if(converter.replace_mode === 'img' || converter.replace_mode === 'css'){
-            return Converters.image;
-        }
+        converter.use_sheet = false;
+        converter.replace_mode = 'unified';
+        
         return converter;
     }
 
@@ -114,6 +119,7 @@ class Converters {
      */
     static get image() {
         const converter = new EmojiConvertor();
+        converter.avoid_ms_emoji = false;
         converter.init_env();
         converter.replace_mode = 'css';
         converter.supports_css = true;

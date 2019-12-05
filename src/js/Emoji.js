@@ -128,11 +128,11 @@ export default class Emoji {
      */
     getCodepoints (){
         const $image = $(this.getImage());
-        if($image.hasClass('emoji-inner')){
-            return $image.data('codepoints');
+        if ($image.find('.emoji-inner').length) {
+            return $image.find('.emoji-inner').data('codepoints');
         }
 
-        return $image.find('.emoji-inner').data('codepoints');
+        return $image.data('codepoints');
     }
 
     /**
