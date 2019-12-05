@@ -1,7 +1,7 @@
 {
-  "name": "rm-emoji-picker",
+  "name": "@appleple/rm-emoji-picker",
   "description": "A modular emoji picker written with modern front-end in mind.",
-  "version": "0.4.01",
+  "version": "0.0.1",
   "keywords": [
     "emoji",
     "emoji-picker",
@@ -47,5 +47,8 @@
     "styles": "scss --watch src/scss/emojipicker.scss:dist/emojipicker.css",
     "build": "babel --presets es2015 src/js -d dist/"
   },
-  "main": "dist/EmojiPicker.js"
+  "main": "dist/EmojiPicker.js",
+  "publishConfig": {
+    "access": "public"
+  }
 }
