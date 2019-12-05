@@ -1,7 +1,7 @@
 {
   "name": "@appleple/rm-emoji-picker",
   "description": "A modular emoji picker written with modern front-end in mind.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "emoji",
     "emoji-picker",
@@ -38,14 +38,9 @@
     "webpack-cli": "3.0.7"
   },
   "scripts": {
-    "start": "webpack --progress --watch",
-    "lib-prod": "NODE_ENV=production webpack --progress --mode production",
-    "lib-dev": "webpack --watch --progress --mode development",
-    "example-prod": "webpack --config example.webpack.config.js --watch --progress --mode production",
-    "example-dev": "webpack --config example.webpack.config.js --watch --progress --mode development",
-    "start-example": "webpack --config example.webpack.config.js --progress --watch",
-    "styles": "scss --watch src/scss/emojipicker.scss:dist/emojipicker.css",
-    "build": "babel --presets es2015 src/js -d dist/"
+    "build": "NODE_ENV=production webpack --progress --mode production",
+    "start": "webpack --config example.webpack.config.js --watch --progress --mode development",
+    "css": "scss --watch src/scss/emojipicker.scss:dist/emojipicker.css"
   },
   "main": "dist/EmojiPicker.js",
   "publishConfig": {
